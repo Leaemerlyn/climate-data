@@ -1,77 +1,116 @@
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  Select,
-  Chip,
-  Box,
-  OutlinedInput,
-  checkbox,
-} from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
-import Checkbox from "@mui/material/Checkbox";
+import { Button, Box } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import CssBaseline from "@mui/material/CssBaseline";
 import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import "./App.css";
-import { countries } from "./data/data";
 import React from "react";
-import { getGraph } from "./requestHandler/requestHandler";
+import { ClimateViz } from "./ClimateViz";
+import { SlopeInterceptGen } from "./slopeInterceptGen";
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
+const drawerWidth = 240;
+const navItems = ["Blog Post", "Data Viz", "Team"];
 
-function App() {
-  const [selectCountries, setCountries] = React.useState([]);
-  const [image, setImage] = React.useState("")
+function App(props) {
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [tab, setTab] = React.useState("Blog Post")
+    const { window } = props;
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setCountries(typeof value === "string" ? value.split(",") : value);
-  };
+    const handleDrawerToggle = () => {
+        setMobileOpen((prevState) => !prevState);
+    };
 
-  const handleButtonClick = async (event) => {
-    const myImage = await getGraph(selectCountries)
-    setImage(myImage)
-  }
+    const drawer = (
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+            <Typography variant="h6" sx={{ my: 2 }}>
+                Hot Topics
+            </Typography>
+            <Divider />
+            <List>
+                {navItems.map((item) => (
+                    <ListItem key={item} disablePadding>
+                        <ListItemButton sx={{ textAlign: "center" }}>
+                            <ListItemText primary={item} />
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
 
+    const container =
+        window !== undefined ? () => window().document.body : undefined;
 
-  return (
-    <>
-    <div id="graphing_ui">
-      <FormControl sx={{ m: 3, width: 350 }}>
-        <InputLabel>countries</InputLabel>
-        <Select
-          labelId="demo-multiple-checkbox-label"
-          id="demo-multiple-checkbox"
-          multiple
-          value={selectCountries}
-          onChange={handleChange}
-          input={<OutlinedInput label="countries" />}
-          renderValue={(selected) => selected.join(", ")}
-          MenuProps={MenuProps}
-        >
-          {countries.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={selectCountries.indexOf(name) > -1} />
-              <ListItemText primary={name} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <Button variant="contained" size="medium" onClick={handleButtonClick}>Graph!</Button>
-    </div>
-    <img src={"data:image/png;base64, " + image}></img>
-    </>
-  );
+    return (
+        <>
+            <Box sx={{ display: "flex" }}>
+                <CssBaseline />
+                <AppBar component="nav">
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ mr: 2, display: { sm: "none" } }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography
+                            variant="h6"
+                            component="div"
+                            sx={{
+                                flexGrow: 1,
+                                display: { xs: "none", sm: "block" },
+                            }}
+                        >
+                            Hot Topics
+                        </Typography>
+                        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                            {navItems.map((item) => (
+                                <Button key={item} sx={{ color: "#fff" }} onClick={() => setTab(item)}>
+                                    {item}
+                                </Button>
+                            ))}
+                        </Box>
+                    </Toolbar>
+                </AppBar>
+                <nav>
+                    <Drawer
+                        container={container}
+                        variant="temporary"
+                        open={mobileOpen}
+                        onClose={handleDrawerToggle}
+                        ModalProps={{
+                            keepMounted: true, // Better open performance on mobile.
+                        }}
+                        sx={{
+                            display: { xs: "block", sm: "none" },
+                            "& .MuiDrawer-paper": {
+                                boxSizing: "border-box",
+                                width: drawerWidth,
+                            },
+                        }}
+                    >
+                        {drawer}
+                    </Drawer>
+                </nav>
+                <Box component="main" sx={{ width: "100%" }}>
+                    <Toolbar />
+                    <ClimateViz />
+                    <SlopeInterceptGen/>
+                </Box>
+            </Box>
+        </>
+    );
 }
 
 export default App;

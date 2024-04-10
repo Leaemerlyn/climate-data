@@ -1,4 +1,4 @@
-const BASE_URL = "http://leaemerlyn.pythonanywhere.com"
+const BASE_URL = "https://leaemerlyn.pythonanywhere.com"
 
 export async function getGraph (selectCountries){
 
