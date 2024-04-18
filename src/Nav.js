@@ -33,13 +33,33 @@ export const Nav = (props) => {
 			</Typography>
 			<Divider />
 			<List>
-				{navItems.map((item) => (
-					<ListItem key={item} disablePadding>
-						<ListItemButton sx={{ textAlign: "center" }}>
-							<ListItemText primary={item} />
+				<Link to="/Blog" style={{ textDecoration: "none" }}>
+					<ListItem key="blog" disablePadding>
+						<ListItemButton
+							sx={{ textAlign: "center", color: "black" }}
+						>
+							<ListItemText primary="Blog" />
 						</ListItemButton>
 					</ListItem>
-				))}
+				</Link>
+				<Link to="/DataViz" style={{ textDecoration: "none" }}>
+					<ListItem key="DataViz" disablePadding>
+						<ListItemButton
+							sx={{ textAlign: "center", color: "black" }}
+						>
+							<ListItemText primary="DataViz" />
+						</ListItemButton>
+					</ListItem>
+				</Link>
+				<Link to="/About" style={{ textDecoration: "none" }}>
+					<ListItem key="About" disablePadding>
+						<ListItemButton
+							sx={{ textAlign: "center", color: "black" }}
+						>
+							<ListItemText primary="About" />
+						</ListItemButton>
+					</ListItem>
+				</Link>
 			</List>
 		</Box>
 	);
@@ -72,17 +92,17 @@ export const Nav = (props) => {
 						Hot Topics
 					</Typography>
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
-						<Link to="/blog">
+						<Link to="/Blog">
 							<Button key="blog" sx={{ color: "#fff" }}>
 								Blog
 							</Button>
 						</Link>
-                        <Link to="/DataViz">
+						<Link to="/DataViz">
 							<Button key="DataViz" sx={{ color: "#fff" }}>
 								DataViz
 							</Button>
 						</Link>
-                        <Link to="/About">
+						<Link to="/About">
 							<Button key="About" sx={{ color: "#fff" }}>
 								About
 							</Button>

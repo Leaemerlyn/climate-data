@@ -16,9 +16,9 @@ function App(props) {
 				<Box component="main" sx={{ width: "100%" }}>
 					<Toolbar />
 					<Routes>
-						<Route path="/blog" element={<Blog/>} />
-						<Route path="/dataviz" element={<ClimateViz />} />
-                        <Route path="/about" element={<About/>} />
+						<Route path="/Blog" element={<Blog/>} />
+						<Route path="/DataViz" element={<ClimateViz />} />
+                        <Route path="/About" element={<About/>} />
 					</Routes>
 				</Box>
 			</BrowserRouter>
