@@ -1,0 +1,10 @@
+.aboutContainer{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.card{
+    max-width: 355px;
+}
