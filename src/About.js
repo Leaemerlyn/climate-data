@@ -13,10 +13,10 @@ export function About() {
 	return (
 		<div className="aboutContainer">
 			<Card className="card">
-				<CardMedia component="img" alt="dog" height="140" image={dog} />
+				<CardMedia component="img" alt="dog" height="200" image={dog} />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
-						Lizard
+						Lea Emerlyn
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
 						Lizards are a widespread group of squamate reptiles,
@@ -31,7 +31,7 @@ export function About() {
 			</Card>
 
             <Card className="card">
-				<CardMedia component="img" alt="dog" height="140" image={dog} />
+				<CardMedia component="img" alt="dog" height="200" image={dog} />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
 						Lizard
@@ -49,7 +49,7 @@ export function About() {
 			</Card>
 
             <Card className="card">
-				<CardMedia component="img" alt="dog" height="140" image={dog} />
+				<CardMedia component="img" alt="dog" height="200" image={dog} />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
 						Lizard

@@ -33,6 +33,15 @@ export const Nav = (props) => {
 			</Typography>
 			<Divider />
 			<List>
+            <Link to="/" style={{ textDecoration: "none" }}>
+					<ListItem key="Home" disablePadding>
+						<ListItemButton
+							sx={{ textAlign: "center", color: "black" }}
+						>
+							<ListItemText primary="Home" />
+						</ListItemButton>
+					</ListItem>
+				</Link>
 				<Link to="/Blog" style={{ textDecoration: "none" }}>
 					<ListItem key="blog" disablePadding>
 						<ListItemButton
@@ -48,6 +57,15 @@ export const Nav = (props) => {
 							sx={{ textAlign: "center", color: "black" }}
 						>
 							<ListItemText primary="DataViz" />
+						</ListItemButton>
+					</ListItem>
+				</Link>
+                <Link to="/References" style={{ textDecoration: "none" }}>
+					<ListItem key="References" disablePadding>
+						<ListItemButton
+							sx={{ textAlign: "center", color: "black" }}
+						>
+							<ListItemText primary="References" />
 						</ListItemButton>
 					</ListItem>
 				</Link>
@@ -85,6 +103,7 @@ export const Nav = (props) => {
 						variant="h6"
 						component="div"
 						sx={{
+							textDecoration: "none",
 							flexGrow: 1,
 							display: { xs: "none", sm: "block" },
 						}}
@@ -92,6 +111,11 @@ export const Nav = (props) => {
 						Hot Topics
 					</Typography>
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
+						<Link to="/">
+							<Button key="blog" sx={{ color: "#fff" }}>
+								Home
+							</Button>
+						</Link>
 						<Link to="/Blog">
 							<Button key="blog" sx={{ color: "#fff" }}>
 								Blog
@@ -100,6 +124,11 @@ export const Nav = (props) => {
 						<Link to="/DataViz">
 							<Button key="DataViz" sx={{ color: "#fff" }}>
 								DataViz
+							</Button>
+						</Link>
+                        <Link to="/References">
+							<Button key="DataViz" sx={{ color: "#fff" }}>
+								References
 							</Button>
 						</Link>
 						<Link to="/About">

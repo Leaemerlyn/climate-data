@@ -1,0 +1,19 @@
+.landingContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#landingImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 64px);
+    width: 100vw;
+    background-image: url(./images/landingBackground.png);
+}
+
+.buttonGroup{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
