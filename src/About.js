@@ -25,6 +25,24 @@ export function About() {
 					</Typography>
 				</CardContent>
 				<CardActions>
+					<Button size="small" href="mailto:leaemerlyn@gmail.com">Email</Button>
+					<Button size="small" href="https://www.linkedin.com/in/lea-emerlyn-7b8170168/" target="_blank">LinkedIn</Button>
+				</CardActions>
+			</Card>
+
+            <Card className="card">
+				<CardMedia component="img" alt="dog" height="200" image={dog} />
+				<CardContent>
+					<Typography gutterBottom variant="h5" component="div">
+						Lizard
+					</Typography>
+					<Typography variant="body2" color="text.secondary">
+						Lizards are a widespread group of squamate reptiles,
+						with over 6,000 species, ranging across all continents
+						except Antarctica
+					</Typography>
+				</CardContent>
+				<CardActions>
 					<Button size="small">Email</Button>
 					<Button size="small">LinkedIn</Button>
 				</CardActions>
@@ -43,26 +61,8 @@ export function About() {
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="small">Share</Button>
-					<Button size="small">Learn More</Button>
-				</CardActions>
-			</Card>
-
-            <Card className="card">
-				<CardMedia component="img" alt="dog" height="200" image={dog} />
-				<CardContent>
-					<Typography gutterBottom variant="h5" component="div">
-						Lizard
-					</Typography>
-					<Typography variant="body2" color="text.secondary">
-						Lizards are a widespread group of squamate reptiles,
-						with over 6,000 species, ranging across all continents
-						except Antarctica
-					</Typography>
-				</CardContent>
-				<CardActions>
-					<Button size="small">Share</Button>
-					<Button size="small">Learn More</Button>
+					<Button size="small">Email</Button>
+					<Button size="small">LinkedIn</Button>
 				</CardActions>
 			</Card>
 		</div>
