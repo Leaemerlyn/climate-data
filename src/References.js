@@ -9,11 +9,45 @@ export function References() {
 			display="flex"
 			alignItems="left"
 			flexDirection={"column"}
-			gap={4}
+			gap={3}
 			p={6}
 			margin={2}
 		>
 			<Typography variant="h5">References</Typography>
+			<div>
+				<Typography variant="body1">
+					<b>Datasets used:</b>
+				</Typography>
+				<Link
+					href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data"
+					target="_blank"
+				>
+					https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data
+				</Link>
+				<br />
+				<Link
+					href="https://www.datapandas.org/ranking/capitalist-countries#full-data"
+					target="_blank"
+				>
+					https://www.datapandas.org/ranking/capitalist-countries#full-data
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://www.compareyourcountry.org/tax-revenues-global"
+					target="_blank"
+				>
+					https://www.compareyourcountry.org/tax-revenues-global
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://stats.oecd.org/Index.aspx?DataSetCode=RS_GBL"
+					target="_blank"
+				>
+					https://stats.oecd.org/Index.aspx?DataSetCode=RS_GBL
+				</Link>
+			</div>
 			<div>
 				<Typography variant="body1">
 					<b>
@@ -222,7 +256,7 @@ export function References() {
 				>
 					https://stackoverflow.com/questions/34492197/how-to-render-and-return-plot-to-view-in-flask
 				</Link>
-                <br />
+				<br />
 				<br />
 				<Link
 					href="https://stackoverflow.com/questions/25594893/how-to-enable-cors-in-flask"

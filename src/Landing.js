@@ -24,13 +24,13 @@ export function Landing() {
 						<b> Hot Topics</b>
 					</Typography>
 					<Typography>
-                        THIS IS JUST PLACEHOLDER TEXT
-						The first goal of this project is to provide an analysis
-						of factors that affect Earth’s surface temperature. We
-						will relate local and global temperature change to
-						natural phenomena, such as volcanic eruption, and assess
-						whether specific human actions, such as capitalistic
-						index, relate to patterns in temperature.
+						THIS IS JUST PLACEHOLDER TEXT The first goal of this
+						project is to provide an analysis of factors that affect
+						Earth’s surface temperature. We will relate local and
+						global temperature change to natural phenomena, such as
+						volcanic eruption, and assess whether specific human
+						actions, such as capitalistic index, relate to patterns
+						in temperature.
 						<br />
 						<br />
 						For the second goal, we are interested in creating a
@@ -46,7 +46,7 @@ export function Landing() {
 						<Link to="/Blog">
 							<Button variant="contained">Read Blog</Button>
 						</Link>
-						<Button variant="contained">Python Note</Button>
+							<Button variant="contained" href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB?usp=sharing" target="_blank">Python Note</Button>
 					</div>
 				</Box>
 			</div>

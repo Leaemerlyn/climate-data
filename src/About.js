@@ -5,7 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import dog from "./images/dog.png";
+import lea from "./images/lea.jpg";
+import dog from "./images/dog.png"
 import Toolbar from "@mui/material/Toolbar";
 import "./About.css"
 
@@ -13,7 +14,7 @@ export function About() {
 	return (
 		<div className="aboutContainer">
 			<Card className="card">
-				<CardMedia component="img" alt="dog" height="200" image={dog} />
+				<CardMedia component="img" alt="lea" height="300" image={lea} />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
 						Lea Emerlyn
