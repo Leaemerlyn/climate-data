@@ -265,6 +265,34 @@ export function References() {
 					https://stackoverflow.com/questions/25594893/how-to-enable-cors-in-flask
 				</Link>
 			</div>
+			<div>
+				<Typography variant="body1">
+					<b>Resource for t-SNE Visualizations</b>
+				</Typography>
+				<Link
+					href="https://distill.pub/2016/misread-tsne/"
+					target="_blank"
+				>
+					https://distill.pub/2016/misread-tsne/
+				</Link>
+			</div>
+			<div>
+				<Typography variant="body1">
+					<b>Resource for Country Climate Classifications</b>
+				</Typography>
+				<Link
+					href="https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification"
+					target="_blank"
+				>
+					https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification
+				</Link><br/><br/>
+				<Link
+					href="https://worldpopulationreview.com/country-rankings/tropical-countries"
+					target="_blank"
+				>
+					https://worldpopulationreview.com/country-rankings/tropical-countries
+				</Link>
+			</div>
 		</Box>
 	);
 }

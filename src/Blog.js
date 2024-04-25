@@ -28,7 +28,11 @@ import country_slope_intercept from "./images/blogImages/country_slope_intercept
 import country_slope_intercept_1743 from "./images/blogImages/country_slope_intercept_1743.png";
 import tax_rev_usd_europe from "./images/blogImages/tax_rev_usd_europe.png";
 import temp_delta_tax_rev_usd from "./images/blogImages/temp_delta_tax_rev_usd.png"
-import tax_rev_usd_bin from "./images/blogImages/tax_rev_usd_bin.png"
+import tax_rev_usd_bin from "./images/blogImages/tax_rev_usd_bin.png";
+import tax_rev_gdp_list from "./images/blogImages/tax_rev_gdp_list.png";
+import highest_tax_rev_gdp from "./images/blogImages/highest_tax_rev_gdp.png";
+import temp_delta_tax_rev_gdp from "./images/blogImages/temp_delta_tax_rev_gdp.png";
+import temp_delta_capitalist from "./images/blogImages/temp_delta_capitalist.png"
 
 export const Blog = () => {
 	return (
@@ -268,7 +272,7 @@ export const Blog = () => {
 					inflation in each country.
 				</Typography>
 
-				<img src={countries}></img>
+				<img src={tax_rev_gdp_list}></img>
 
 				<Typography>
 					After controlling for GDP and inflation, the USA and China
@@ -279,7 +283,7 @@ export const Blog = () => {
 					or due to other social or historical factors.
 				</Typography>
 
-				<img src={countries}></img>
+				<img src={highest_tax_rev_gdp}></img>
 
 				<Typography>
 					Looking at the tax revenue per GDP of these European
@@ -288,7 +292,7 @@ export const Blog = () => {
 					potentially as a result of political changes over time.
 				</Typography>
 
-				<img src={countries}></img>
+				<img src={temp_delta_tax_rev_gdp}></img>
 
 				<Typography variant="caption">
 					Correlation coefficient: -0.6120837039173447
@@ -364,7 +368,7 @@ export const Blog = () => {
 					over domestic issues. Therefore, the government will be less
 					likely to push environmental regulations.{" "}
 				</Typography>
-				<img src={countries}></img>
+				<img src={temp_delta_capitalist}></img>
 				<Typography variant="caption">
 					Correlation coefficient: -0.25111116990542454
 				</Typography>

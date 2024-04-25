@@ -46,6 +46,11 @@ export function ClimateViz() {
 			<Typography textAlign={"center"} variant="h5" my={4}>
 				Visualize our dataset!
 			</Typography>
+			<Typography textAlign={"center"}>
+				{" "}
+				Select one or more countries to view their temperature year over
+				year
+			</Typography>
 			<div id="graphing_ui">
 				<FormControl sx={{ m: 3, width: 350 }}>
 					<InputLabel>countries</InputLabel>
