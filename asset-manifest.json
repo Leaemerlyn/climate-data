@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/climate-data/static/css/main.9eac86ef.css",
-    "main.js": "/climate-data/static/js/main.75a13cea.js",
+    "main.js": "/climate-data/static/js/main.572cc7a5.js",
     "static/js/453.d01a633e.chunk.js": "/climate-data/static/js/453.d01a633e.chunk.js",
     "static/media/landingBackground.png": "/climate-data/static/media/landingBackground.dbb916850628bb3a2645.png",
     "static/media/cover.jpg": "/climate-data/static/media/cover.d2e811ead24aaf9ea756.jpg",
@@ -39,11 +39,11 @@
     "static/media/ARIMA RMSE.png": "/climate-data/static/media/ARIMA RMSE.e3416f2946698957e271.png",
     "index.html": "/climate-data/index.html",
     "main.9eac86ef.css.map": "/climate-data/static/css/main.9eac86ef.css.map",
-    "main.75a13cea.js.map": "/climate-data/static/js/main.75a13cea.js.map",
+    "main.572cc7a5.js.map": "/climate-data/static/js/main.572cc7a5.js.map",
     "453.d01a633e.chunk.js.map": "/climate-data/static/js/453.d01a633e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9eac86ef.css",
-    "static/js/main.75a13cea.js"
+    "static/js/main.572cc7a5.js"
   ]
 }
