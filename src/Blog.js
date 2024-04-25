@@ -22,18 +22,26 @@ import mt_tambora_ne_us from "./images/blogImages/Mt Tambora NE US.png";
 import mt_tambora_west_europe from "./images/blogImages/Mt Tambora West Europe.png";
 import northern_hemisphere_temp from "./images/blogImages/Northern Hemisphere Temp.png";
 import prophet_rmse from "./images/blogImages/Prophet RMSE.png";
+import country_temp_change from "./images/blogImages/country_temp_change.png";
+import country_list_temp_change from "./images/blogImages/country_list_temp_change.png";
+import country_slope_intercept from "./images/blogImages/country_slope_intercept.png";
+import country_slope_intercept_1743 from "./images/blogImages/country_slope_intercept_1743.png";
+import tax_rev_usd_europe from "./images/blogImages/tax_rev_usd_europe.png";
+import temp_delta_tax_rev_usd from "./images/blogImages/temp_delta_tax_rev_usd.png"
+import tax_rev_usd_bin from "./images/blogImages/tax_rev_usd_bin.png"
 
 export const Blog = () => {
 	return (
 		<div style={{ display: "flex", justifyContent: "center" }}>
 			<Box
 				maxWidth={"900px"}
+				minWidth={"0"}
 				display="flex"
 				alignItems="left"
 				flexDirection={"column"}
 				gap={2}
 				p={3}
-				margin={6}
+				margin={2}
 			>
 				<div>
 					<Typography variant="overline">
@@ -89,8 +97,7 @@ export const Blog = () => {
 					<b>Exploratory Data Analysis</b>
 				</Typography>
 				<Typography variant="h6"> Countries Dataset EDA </Typography>
-				<img src={countries}></img>
-				<Typography variant="caption">Here is some caption</Typography>
+				<img src={country_slope_intercept}></img>
 				<Typography>
 					Because each country has its own seasonal patterns that
 					affect their temperature throughout the year, we need to
@@ -107,7 +114,7 @@ export const Blog = () => {
 					similar levels of temperature change for visualization
 					purposes.
 				</Typography>
-				<img src={countries}></img>
+				<img src={country_slope_intercept_1743}></img>
 				<Typography>
 					These are the countries with the highest slope, which
 					indicates the largest rate of heat increase over the time
@@ -133,14 +140,14 @@ export const Blog = () => {
 					more moderate temperatures.
 				</Typography>
 
-				<img src={countries}></img>
+				<img src={country_list_temp_change}></img>
 
 				<Typography>
 					We organized the 1743-2013 temperature delta data into bins
 					of 0.5 degrees to aid with visualizing the data.
 				</Typography>
 
-				<img src={countries}></img>
+				<img src={country_temp_change}></img>
 
 				<Typography>
 					After binning, we counted how many countries fit within each
@@ -175,7 +182,7 @@ export const Blog = () => {
 					highest tax revenue.
 				</Typography>
 
-				<img src={countries}></img>
+				<img src={tax_rev_usd_bin}></img>
 
 				<Typography>
 					In terms of how much tax revenue each country collects, US
@@ -184,12 +191,28 @@ export const Blog = () => {
 					mostly European countries.{" "}
 				</Typography>
 
-				<img src={countries}></img>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
+				>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={countries}
+					></img>
+
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tax_rev_usd_europe}
+					></img>
+				</div>
+
 				<Typography variant="caption">
 					Caption: tax trends seems to be going up generally. US
 					collects the most tax by far.
 				</Typography>
-				<img src={countries}></img>
 				<Typography>
 					Tax revenues increased consistently over time across most
 					countries. However, since tax revenue is partly a function
@@ -197,7 +220,7 @@ export const Blog = () => {
 					time. We also need to account for inflation, which would
 					also lead to an increase in the raw tax revenue collected.
 				</Typography>
-				<img src={countries}></img>
+				<img src={temp_delta_tax_rev_usd}></img>
 				<Typography variant="caption">
 					Correlation Coefficient: -0.009853504342372723
 				</Typography>
@@ -224,6 +247,7 @@ export const Blog = () => {
 					rich) countries which all have a similarly low temperature
 					delta. These are all European countries as seen above.
 				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}ç></Divider>
 
 				<Typography variant="h6">
 					Tax Revenue as percentage of GDP
@@ -325,11 +349,38 @@ export const Blog = () => {
 					instead they could be two outcomes of the countries’
 					geographical locations, related by historical circumstances.
 				</Typography>
-
-				<Typography variant="h6">Capitalistic Index</Typography>
-				<Typography>TBD</Typography>
-
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+				<Typography variant="h6">Capitalistic Index</Typography>
+				<Typography>
+					Another large scale human action factor that we considered
+					was the capitalistic index. The reason we were interested in
+					looking at the correlation between capitalism and
+					temperature change is that generally, the more capitalist a
+					country is, the more power corporations have. In general,
+					corporations seek to increase their profit margins, which
+					could lead to production methods that may not take the
+					environment into consideration. In addition, the more
+					capitalist a country is, the less power the government has
+					over domestic issues. Therefore, the government will be less
+					likely to push environmental regulations.{" "}
+				</Typography>
+				<img src={countries}></img>
+				<Typography variant="caption">
+					Correlation coefficient: -0.25111116990542454
+				</Typography>
+
+				<Typography>
+					The correlation between capitalism and surface temperature
+					of that area is weakly correlated. A good quantity of the
+					countries which scored high on the capitalism index are
+					countries with a relatively low baseline temperature. There
+					are some exceptions though, such as Singapore. Cool
+					countries experienced less heating from climate change, so
+					this may explain the weak negative correlation between
+					capitalistic index and temperature delta.
+				</Typography>
+
+				<Divider sx={{ opacity: 0, padding: "24px" }}></Divider>
 				<Typography variant="h5">
 					<b>Non-Human Action</b>
 				</Typography>
@@ -373,14 +424,14 @@ export const Blog = () => {
 					temperature from 1813 to 1816.
 				</Typography>
 				<Typography>
-					The
+					The{" "}
 					<a href="https://www.irishtimes.com/opinion/a-volcanic-eruption-with-global-repercussions-an-irishman-s-diary-on-1816-the-year-without-a-summer-1.2760797">
 						Irish Times
-					</a>
-					and
+					</a>{" "}
+					and{" "}
 					<a href="https://www.smithsonianmag.com/history/blast-from-the-past-65102374/">
 						Smithsonian Magazine
-					</a>
+					</a>{" "}
 					reported that the Northern Hemisphere experienced a
 					noticeable drop in temperature after the eruption in 1816 -
 					a period called “the year without a summer”. It is predicted
@@ -393,7 +444,10 @@ export const Blog = () => {
 					<b>Northern Hemisphere Temp</b>
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={northern_hemisphere_temp}
 				></img>
 				<Typography>
@@ -404,20 +458,30 @@ export const Blog = () => {
 					France, Spain, Portugal, and the UK). Click{" "}
 					<a href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB#scrollTo=0RukoYYax0HI">
 						here
-					</a>
+					</a>{" "}
 					for a map of temperatures in these regions from 1814 to
 					1816.
 				</Typography>
 
 				<div
-					style={{ display: "flex", justifyContent: "space-between" }}
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
 				>
 					<img
-						style={{ width: "400px" }}
+						style={{
+							maxWidth: "calc(min(400px,100%))",
+							minWidth: "0",
+						}}
 						src={mt_tambora_ne_us}
 					></img>
 					<img
-						style={{ width: "400px" }}
+						style={{
+							maxWidth: "calc(min(400px,100%))",
+							minWidth: "0",
+						}}
 						src={mt_tambora_west_europe}
 					></img>
 				</div>
@@ -445,7 +509,10 @@ export const Blog = () => {
 					temperature.
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={mt_pinatubo_global_temp}
 				></img>
 
@@ -535,7 +602,7 @@ export const Blog = () => {
 					many factors that influence weather. In fact,{" "}
 					<a href="https://news.stanford.edu/2023/01/30/ai-predicts-global-warming-will-exceed-1-5-degrees-2030s/">
 						Stanford University
-					</a>
+					</a>{" "}
 					recently helped create a prediction model using neural
 					networks. Rather than taking into account many variables, we
 					decided to build a simple time-series model for temperature
@@ -559,7 +626,7 @@ export const Blog = () => {
 					adjust these hyperparameters, the model can take longer to
 					train. A simple assignment or a complex assignment would
 					lead to inaccurate predictions. For details on how we
-					trained the ARIMA model, click{" "}
+					trained the ARIMA model, click
 					<a href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB#scrollTo=1OZdI0p8DMts">
 						here
 					</a>
@@ -579,10 +646,20 @@ export const Blog = () => {
 					squared error, the Prophet model was superior.
 				</Typography>
 				<div
-					style={{ display: "flex", justifyContent: "space-between" }}
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
 				>
-					<img style={{ width: "400px" }} src={arima_rmse}></img>
-					<img style={{ width: "400px" }} src={prophet_rmse}></img>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={arima_rmse}
+					></img>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={prophet_rmse}
+					></img>
 				</div>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 
@@ -604,14 +681,20 @@ export const Blog = () => {
 					<b>Hottest City Temp Predictions</b>
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={hottest_city_temp_predictions}
 				></img>
 				<Typography>
 					<b>Hottest Country Temp Predictions</b>
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={hottest_country_temp_predictions}
 				></img>
 				<Typography>
@@ -621,14 +704,20 @@ export const Blog = () => {
 					<b>Coldest City Temp Predictions</b>
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={coldest_city_temp_predictions}
 				></img>
 				<Typography>
 					<b>Coldest Country Temp Predictions</b>
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={coldest_country_temp_predictions}
 				></img>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
@@ -665,7 +754,10 @@ export const Blog = () => {
 					<b>High Temp Change Country Predictions</b>
 				</Typography>
 				<img
-					style={{ width: "400px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,400px))",
+						margin: "auto",
+					}}
 					src={high_temp_change_country_predictions}
 				></img>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
@@ -683,7 +775,10 @@ export const Blog = () => {
 					<b>High and Low Tax Country Predictions</b>
 				</Typography>
 				<img
-					style={{ width: "500px", margin: "auto" }}
+					style={{
+						maxWidth: "calc(min(100%,500px))",
+						margin: "auto",
+					}}
 					src={high_and_low_tax_country_predictions}
 				></img>
 				<Typography>
