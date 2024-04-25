@@ -24,29 +24,41 @@ export function Landing() {
 						<b> Hot Topics</b>
 					</Typography>
 					<Typography>
-						THIS IS JUST PLACEHOLDER TEXT The first goal of this
-						project is to provide an analysis of factors that affect
-						Earth’s surface temperature. We will relate local and
-						global temperature change to natural phenomena, such as
-						volcanic eruption, and assess whether specific human
-						actions, such as capitalistic index, relate to patterns
-						in temperature.
+						Welcome Reader! Our project explores the wonderful
+						climate dataset from Berkeley Earth. We use our climate
+						dataset to investigate key questions, such as looking at
+						how climate is influenced by human and non-human (ie.
+						natural phenomena) actions. Our analysis looks at the
+						temperatures spanning centuries across the globe. <br />
+						<br />
+						Our project will look at several case studies, including
+						but not limited to, how a country’s capitalistic index,
+						tax revenue, and tax revenue in relation to GDP impacts their temperature, and how
+						historical events such as volcanic eruptions to climate
+						weather patterns (ie. El Nino and La Nina) changed the
+						trajectory of a country’s climate.
 						<br />
 						<br />
-						For the second goal, we are interested in creating a
-						forecasting model using the Seasonal ARIMA model to
-						predict future temperature observations. We picked
-						Seasonal ARIMA, because our temperature dataset
-						inherently has seasonality between season to season (ie.
-						Summers & Winters). Given a year and a city, our model
-						will predict the temperature at that given year and
-						city.
+						In our final analysis, we present a time-series analysis
+						by creating a forecasting model using Seasonal ARIMA and
+						Facebook Research’s Prophet package. Our models make
+						future predictions on a country’s temperature, given a
+						year. <br />
+						<br />
+						We’re excited to present our findings to you, the
+						reader, so thanks for stopping by!
 					</Typography>
 					<div className="buttonGroup">
 						<Link to="/Blog">
 							<Button variant="contained">Read Blog</Button>
 						</Link>
-							<Button variant="contained" href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB?usp=sharing" target="_blank">Python Note</Button>
+						<Button
+							variant="contained"
+							href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB?usp=sharing"
+							target="_blank"
+						>
+							Python Note
+						</Button>
 					</div>
 				</Box>
 			</div>
