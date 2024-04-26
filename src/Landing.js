@@ -27,23 +27,27 @@ export function Landing() {
 						Welcome Reader! Our project explores the wonderful
 						climate dataset from Berkeley Earth. We use our climate
 						dataset to investigate key questions, such as looking at
-						how climate is influenced by human and non-human (ie.
-						natural phenomena) actions. Our analysis looks at the
-						temperatures spanning centuries across the globe. <br />
+						how climate is correlated with human and non-human (ie.
+						natural phenomena) factors. Our analysis looks at
+						temperatures from countries, and our data points span
+						across nearly 250 years.
+						<br />
 						<br />
 						Our project will look at several case studies, including
-						but not limited to, how a country’s capitalistic index,
-						tax revenue, and tax revenue in relation to GDP impacts their temperature, and how
-						historical events such as volcanic eruptions to climate
-						weather patterns (ie. El Nino and La Nina) changed the
-						trajectory of a country’s climate.
+						but not limited to, how a country’s absolute tax
+						revenue, tax revenue in relation to GDP, and country’s
+						capitalistic index correlates with their temperature,
+						and how historical natural phenomena such as volcanic
+						eruptions to climate weather patterns (ie. El Nino and
+						La Nina) changed the trajectory of a country’s climate.
 						<br />
 						<br />
 						In our final analysis, we present a time-series analysis
 						by creating a forecasting model using Seasonal ARIMA and
-						Facebook Research’s Prophet package. Our models make
-						future predictions on a country’s temperature, given a
-						year. <br />
+						Meta Research’s Prophet package. Given a location, a
+						future month, and a future year, our models make a
+						prediction about the given location’s temperature at the
+						given time. <br />
 						<br />
 						We’re excited to present our findings to you, the
 						reader, so thanks for stopping by!

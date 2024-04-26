@@ -27,12 +27,17 @@ import country_list_temp_change from "./images/blogImages/country_list_temp_chan
 import country_slope_intercept from "./images/blogImages/country_slope_intercept.png";
 import country_slope_intercept_1743 from "./images/blogImages/country_slope_intercept_1743.png";
 import tax_rev_usd_europe from "./images/blogImages/tax_rev_usd_europe.png";
-import temp_delta_tax_rev_usd from "./images/blogImages/temp_delta_tax_rev_usd.png"
+import temp_delta_tax_rev_usd from "./images/blogImages/temp_delta_tax_rev_usd.png";
 import tax_rev_usd_bin from "./images/blogImages/tax_rev_usd_bin.png";
 import tax_rev_gdp_list from "./images/blogImages/tax_rev_gdp_list.png";
 import highest_tax_rev_gdp from "./images/blogImages/highest_tax_rev_gdp.png";
 import temp_delta_tax_rev_gdp from "./images/blogImages/temp_delta_tax_rev_gdp.png";
-import temp_delta_capitalist from "./images/blogImages/temp_delta_capitalist.png"
+import temp_delta_capitalist from "./images/blogImages/temp_delta_capitalist.png";
+import global_average_temperature_over_time from "./images/blogImages/global_average_temperature_over_time.png";
+import decadal_average_temp_international_cities from "./images/blogImages/decadal_average_temp_international_cities.png";
+import year_period_avg_cities_us from "./images/blogImages/25_year_period_avg_cities_us.png";
+import decadal_average_temp_countries_high_tax from "./images/blogImages/decadal_average_temp_countries_high_tax.png";
+import state_avg_temp_trend from "./images/blogImages/state_avg_temp_trend.png"
 
 export const Blog = () => {
 	return (
@@ -49,10 +54,10 @@ export const Blog = () => {
 			>
 				<div>
 					<Typography variant="overline">
-						Climate Change Overline text
+						Earth Surface Temperature
 					</Typography>
 					<Typography variant="h3">
-						Climate Change is Important: Add a Title for the Blog
+						Trends in Temperature: Decoding Climate Data
 					</Typography>
 				</div>
 				<img src={cover}></img>
@@ -73,33 +78,156 @@ export const Blog = () => {
 					The first one comes from Berkeley Earth on Kaggle, and this
 					contains information such as temperature data beginning from
 					the 1750s and ending in the 2010s. The Berkeley Earth
-					dataset contains five CSV files, ranging which includes
-					climate data points on cities, countries, and states in the
-					U.S. The majority of our analysis will be anchored by the
-					data from Berkeley Earth.
+					dataset contains five CSV files, which includes climate data
+					points observed in cities, countries, and states in the U.S.
+					The majority of our analysis will be anchored by the data
+					from Berkeley Earth.
 				</Typography>
 				<Typography>
 					The next source of our data comes from Data Pandas and the
 					Global Revenue Statistics Database, which contains
 					information on a country’s capitalistic index, tax revenue,
 					and GDP. This serves as the foundational dataset for our
-					analysis on understanding how human actions and
-					interventions affect a country’s climate.
+					analysis on understanding how human factors and
+					interventions correlate with a country’s climate.
 				</Typography>
 				<Typography>
-					For analyzing the effects non-human actions (ie. natural
+					For analyzing the effects non-human factors (ie. natural
 					phenomena) have on a country’s climate, we turned to the
 					National Oceanic and Atmospheric Administration (NOAA) to
-					characterize the periods of El Nino and La Nino. We were
+					characterize the periods of El Nino and La Nina. We were
 					interested in studying how these two opposing climate
 					patterns influence a country’s observed temperature, so we
 					relied on NOAA to provide us with the historical record of
-					when El Nino and La Nina events occurred.
+					when El Nino and La Nina periods occurred.
 				</Typography>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+				<Typography variant="h6"> Our Narrative </Typography>
+				<Typography>
+					Our blog post is divided into four main sections. The first
+					section is our exploratory data analysis, where we present
+					introductory analysis by plotting the temperatures of cities
+					and countries. We end our exploration with t-SNE
+					representations of our data in a low-dimensional space using
+					k-means clustering of cities and countries.
+				</Typography>
+				<Typography>
+					In the second and third sections, we walk through the
+					journey of analyzing the climate dataset through the lens of
+					two different perspectives: the first will be looking at
+					human factors and the second will be looking at non-human
+					factors.
+				</Typography>
+				<Typography>
+					The human factors we study are a country’s absolute tax
+					revenue, tax revenue in relation to GDP, and country’s
+					capitalistic index. The main questions we intend to answer
+					is the following: How are these three human factors
+					correlated with a country’s observed temperature? How
+					strongly correlated are each of these three factors with a
+					country’s temperature?
+				</Typography>
+				<Typography>
+					For the non-human factors, primarily naturally occurring
+					phenomena, we look at events in the historical record to
+					analyze how these climate events changed the trajectory of a
+					country’s temperature. Specifically, we look at two
+					different case studies. First, we study the Mt. Tambora
+					volcano eruption in 1815 and the Mt. Pinatubo eruption in
+					1991. Then, we study the El Nino and La Nina climate
+					patterns from the Pacific Ocean. In both case studies, we
+					aim to investigate the following question: How do these
+					climate events and patterns change a country’s temperature
+					trajectory?
+				</Typography>
+				<Typography>
+					Finally, in our last section, we perform a time-series
+					analysis and we create a forecasting model using our climate
+					data which spans across 250 years. We create a model using
+					two approaches, the first is a Seasonal ARIMA and the second
+					is using Meta Research’s Prophet package. Our model predicts
+					a city’s or country’s future temperatures, then we analyze
+					our model’s accuracy using root mean squared errors.
+				</Typography>
+				<Typography>
+					With all this in mind, let’s dive into our data-driven
+					analytical journey!
+				</Typography>
+
+				<Divider sx={{ opacity: 0, padding: "24px" }}></Divider>
 				<Typography variant="h5">
 					<b>Exploratory Data Analysis</b>
 				</Typography>
+				<Typography variant="h6"> General EDA </Typography>
+				<img src={global_average_temperature_over_time}></img>
+				<Typography variant="caption">
+					Plotting the 25-year period rolling average between the
+					1750s to 2010s demonstrates there exists a general upward
+					trend in global average temperatures.
+				</Typography>
+				<Typography>
+					To begin our exploratory data analysis, we’re going to first
+					perform sanity checks on our dataset to ensure our data
+					cleaning process was successful. Since we’re interested in
+					observing whether or not overall trends in the climate
+					exist, we can naturally plot the yearly average temperature
+					between the 1750s and the 2010s. Furthermore, we’re
+					interested in the general trend, so we can plot a 25-year
+					period rolling average alongside the year-to-year average
+					temperatures. Our plot demonstrates that there exists an
+					upward trend where the global average temperature has been
+					increasing over the past two centuries.
+				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+				<Typography variant="h6">Cities </Typography>
+				<img src={decadal_average_temp_international_cities}></img>
+				<Typography variant="caption">
+					Plotting selected international cities shows the diverse
+					climates different cities experience throughout the decades.
+				</Typography>
+				<Typography>
+					In our climate dataset, we have extracted temperature data
+					for cities, so let’s take a closer look at how temperatures
+					differ across various international cities. We selected a
+					diverse subset of cities to represent various regions of the
+					world, ranging from North America to Europe to Asia. As the
+					line plot suggests, New York and Paris have similar colder
+					temperatures, whereas Los Angeles and Sydney have similar
+					warmer temperatures. All of these cities appear to have a
+					slight upward trend in temperature.{" "}
+				</Typography>
+				<img src={year_period_avg_cities_us}></img>
+				<Typography variant="caption">
+					Plotting cities in the United States highlights which cities
+					experienced colder climates, and which cities experienced
+					warmer climates
+				</Typography>
+				<Typography>
+					In contrast to analyzing international cities, we’re also
+					interested in looking at domestic cities located within the
+					United States. To better visualize all the cities in the
+					United States across our entire climate dataset, we elected
+					to use a heatmap as plotting all the cities on a line graph
+					would prove too busy for our graph. As we can see from our
+					heatmap, cities remain consistent throughout each 25-year
+					period, with slight fluctuations between one 25-year period
+					and the subsequent 25-year period. We observe that cities
+					like Orlando, Florida remain consistently at roughly 22
+					degree Celsius, whereas cities like Cambridge, Massachusetts
+					remain consistently at roughly 7 degree Celsius
+				</Typography>
+
+				<Typography>
+					In our dataset, we had the most data points for cities,
+					nearly 8 million rows to process. Thus, our initial plots
+					for the global average temperatures and the city
+					temperatures reassures us our data cleaning process was
+					successful, and we can move forward with our increasingly
+					complex analysis in the sections downstream. Now, let’s take
+					a closer look at the temperature for countries.
+				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+
 				<Typography variant="h6"> Countries Dataset EDA </Typography>
 				<img src={country_slope_intercept}></img>
 				<Typography>
@@ -160,6 +288,12 @@ export const Blog = () => {
 					somewhat like a normal distribution centered on this bin,
 					but there are some very high delta outliers.
 				</Typography>
+				<Divider sx={{ opacity: 0, padding: "24px" }}></Divider>
+
+				<Typography variant="h5">
+					<b>EDA: k-Means Clustering & t-SNE Visualizations</b>
+				</Typography>
+				<Typography>TO BE DONE </Typography>
 
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h5">
@@ -179,6 +313,7 @@ export const Blog = () => {
 					looked into were absolute tax revenue in US dollars, tax
 					revenue as a percentage of GDP and capitalistic index.
 				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h6">Absolute Tax Revenue</Typography>
 				<Typography>
 					We took the median tax revenue of all the countries over the
@@ -189,10 +324,20 @@ export const Blog = () => {
 				<img src={tax_rev_usd_bin}></img>
 
 				<Typography>
-					In terms of how much tax revenue each country collects, US
-					is at the top by far. The second and third country with the
-					highest tax revenue is China and Japan. Afterwards, we see
-					mostly European countries.{" "}
+					In terms of how much tax revenue each country collects, the
+					US is at the top by far. The second and third country with
+					the highest tax revenue is China and Japan. Afterwards, we
+					see mostly European countries.{" "}
+				</Typography>
+				<Typography>
+					To start, let’s plot out the decadal average temperatures
+					beginning in the 20th century for countries with the highest
+					tax revenue, so we can understand the general ordering on
+					how warm or cold each country is, in relation to one another
+				</Typography>
+				<img src={decadal_average_temp_countries_high_tax}></img>
+				<Typography>
+					should add some words here explaining the chart{" "}
 				</Typography>
 
 				<div
@@ -251,7 +396,7 @@ export const Blog = () => {
 					rich) countries which all have a similarly low temperature
 					delta. These are all European countries as seen above.
 				</Typography>
-				<Divider sx={{ opacity: 0, padding: "12px" }}ç></Divider>
+				<Divider sx={{ opacity: 0, padding: "12px" }} ç></Divider>
 
 				<Typography variant="h6">
 					Tax Revenue as percentage of GDP
@@ -317,7 +462,7 @@ export const Blog = () => {
 					correlation between these metrics, in reality there are
 					several reasons that this hypothesis is unlikely. We know
 					that climate change affects the whole planet, causing global
-					warming as a result of increased greenhouse gasses in the
+					warming as a result of increased greenhouse gases in the
 					atmosphere. Polluting countries don’t just cause warming
 					locally, but instead warm the planet as a whole. This has
 					been the subject of tough discussions at climate summits and
@@ -356,17 +501,17 @@ export const Blog = () => {
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h6">Capitalistic Index</Typography>
 				<Typography>
-					Another large scale human action factor that we considered
-					was the capitalistic index. The reason we were interested in
-					looking at the correlation between capitalism and
-					temperature change is that generally, the more capitalist a
-					country is, the more power corporations have. In general,
-					corporations seek to increase their profit margins, which
-					could lead to production methods that may not take the
-					environment into consideration. In addition, the more
-					capitalist a country is, the less power the government has
-					over domestic issues. Therefore, the government will be less
-					likely to push environmental regulations.{" "}
+					Another large scale human factor that we considered was the
+					capitalistic index. The reason we were interested in looking
+					at the correlation between capitalism and temperature change
+					is that generally, the more capitalist a country is, the
+					more power corporations have. In general, corporations seek
+					to increase their profit margins, which could lead to
+					production methods that may not take the environment into
+					consideration. In addition, the more capitalist a country
+					is, the less power the government has over domestic issues.
+					Therefore, the government will be less likely to push
+					environmental regulations.{" "}
 				</Typography>
 				<img src={temp_delta_capitalist}></img>
 				<Typography variant="caption">
@@ -386,7 +531,7 @@ export const Blog = () => {
 
 				<Divider sx={{ opacity: 0, padding: "24px" }}></Divider>
 				<Typography variant="h5">
-					<b>Non-Human Action</b>
+					<b>Non-Human Factors</b>
 				</Typography>
 				<Typography>
 					The current global warming crisis is mainly driven by human
@@ -404,8 +549,9 @@ export const Blog = () => {
 					events on local and worldwide temperatures. Specifically, we
 					focused on the 1815 eruption of Mt. Tambora, the 1991
 					eruption of Mt. Pinatubo, and the regular El Nino and La
-					Nina cycle from the Pacific Ocean
+					Nina cycle from the Pacific Ocean.
 				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 
 				<Typography variant="h6">
 					Mount Tambora’s and Mount Pinatubo’s Effects on Temperature
@@ -443,9 +589,6 @@ export const Blog = () => {
 					Interestingly, our dataset didn’t show a drastic drop in
 					temperature in northern countries. Our analysis shows an
 					approximate 0.3°C drop from 1815 to 1816.
-				</Typography>
-				<Typography>
-					<b>Northern Hemisphere Temp</b>
 				</Typography>
 				<img
 					style={{
@@ -545,12 +688,28 @@ export const Blog = () => {
 					Once the temperature of the area is greater than the average
 					for some time, a phenomenon known as El Nino is triggered.
 					An El Nino event affects the wind currents to North America,
-					causing higher temperature in northwestern US and lower
-					temperature in southern US. If the temperature is less than
-					the average instead, the opposite phenomenon La Nina might
-					be triggered. The wind currents lead to lower temperature in
-					northwestern US and higher temperature in southern US.
+					causing higher temperature in the northwestern US and lower
+					temperature in the southern US. If the temperature is less
+					than the average instead, the opposite phenomenon La Nina
+					might be triggered. The wind currents lead to lower
+					temperature in the northwestern US and higher temperature in
+					the southern US.
 				</Typography>
+				<Typography>
+					We will focus on northwestern and southern US states to
+					examine the effects of El Nino and La Nina. We chose to
+					focus on Alaska, Idaho, Montana, Oregon, Washington, and
+					Wyoming for the northwestern region and Alabama, Arkansas,
+					Georgia, Louisiana, Mississippi, and Texas for the southern
+					region. The heat map below shows the average temperatures of
+					these states every 5 years starting from 1950. The El Nino
+					and La Nina period we decided to analyze occurred in the
+					1970s and 1980s, so visualizing the climate in the decades
+					prior will give us a better understanding of climate trends
+					leading up to the El Nino and La Nina events.
+				</Typography>
+				<img src={state_avg_temp_trend}></img>
+
 				<Typography>
 					To visualize the impacts of El Nino and La Nina, we checked
 					the NOAA’s historical records. We noticed that a strong El
@@ -565,6 +724,7 @@ export const Blog = () => {
 					</a>
 					.
 				</Typography>
+
 				<Typography>
 					As shown below, we can see that the strong 1982-1983 El Nino
 					led to higher than average temperatures across select
@@ -630,7 +790,7 @@ export const Blog = () => {
 					adjust these hyperparameters, the model can take longer to
 					train. A simple assignment or a complex assignment would
 					lead to inaccurate predictions. For details on how we
-					trained the ARIMA model, click
+					trained the ARIMA model, click{" "}
 					<a href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB#scrollTo=1OZdI0p8DMts">
 						here
 					</a>
@@ -702,7 +862,7 @@ export const Blog = () => {
 					src={hottest_country_temp_predictions}
 				></img>
 				<Typography>
-					Here are the predictions for hottest cities and countries:
+					Here are the predictions for coldest cities and countries:
 				</Typography>
 				<Typography>
 					<b>Coldest City Temp Predictions</b>
@@ -754,9 +914,6 @@ export const Blog = () => {
 					give a preliminary assessment of the accuracy of our
 					predictions.
 				</Typography>
-				<Typography>
-					<b>High Temp Change Country Predictions</b>
-				</Typography>
 				<img
 					style={{
 						maxWidth: "calc(min(100%,400px))",
@@ -774,9 +931,6 @@ export const Blog = () => {
 					GDP is correlated with its temperature change. It would be
 					interesting to use Prophet to predict the future
 					temperatures at countries with low and high tax revenue.
-				</Typography>
-				<Typography>
-					<b>High and Low Tax Country Predictions</b>
 				</Typography>
 				<img
 					style={{

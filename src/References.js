@@ -50,6 +50,22 @@ export function References() {
 			</div>
 			<div>
 				<Typography variant="body1">
+					<b>Link to Countries’s Temperatures</b>
+				</Typography>
+				<Link
+					href="https://www.climatestotravel.com/climate/denmark"
+					target="_blank"
+				>
+					https://www.climatestotravel.com/climate/denmark
+				</Link>
+				<br />
+				<br />
+				<Link href="https://weather.com/" target="_blank">
+					https://weather.com/
+				</Link>
+			</div>
+			<div>
+				<Typography variant="body1">
 					<b>
 						Info about effects of natural phenomena on temperature:
 					</b>
@@ -70,6 +86,51 @@ export function References() {
 					target="_blank"
 				>
 					https://oceanservice.noaa.gov/facts/ninonina.html
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://www.climate.gov/news-features/understanding-climate/climate-variability-oceanic-nino-index"
+					target="_blank"
+				>
+					https://www.climate.gov/news-features/understanding-climate/climate-variability-oceanic-nino-index
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_change.shtml"
+					target="_blank"
+				>
+					https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_change.shtml
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming"
+					target="_blank"
+				>
+					https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://www.climate.gov/news-features/featured-images/how-el-ni%C3%B1o-and-la-ni%C3%B1a-affect-winter-jet-stream-and-us-climate"
+					target="_blank"
+				>
+					https://www.climate.gov/news-features/featured-images/how-el-ni%C3%B1o-and-la-ni%C3%B1a-affect-winter-jet-stream-and-us-climate
+				</Link>
+				<br />
+				<br />
+				<Link href="https://www.climate.gov/enso" target="_blank">
+					https://www.climate.gov/enso
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://oceanservice.noaa.gov/facts/tradewinds.html"
+					target="_blank"
+				>
+					https://oceanservice.noaa.gov/facts/tradewinds.html
 				</Link>
 			</div>
 			<div>
@@ -128,7 +189,7 @@ export function References() {
 			</div>
 			<div>
 				<Typography variant="body1">
-					<b>Current temperature change prediction:</b>
+					<b>Stanford’s Temperature Prediction Model</b>
 				</Typography>
 				<Link
 					href="https://news.stanford.edu/2023/01/30/ai-predicts-global-warming-will-exceed-1-5-degrees-2030s/"
@@ -166,22 +227,6 @@ export function References() {
 				<br />
 				<br />
 				<Link
-					href="https://facebookresearch.github.io/Kats/"
-					target="_blank"
-				>
-					https://facebookresearch.github.io/Kats/
-				</Link>
-				<br />
-				<br />
-				<Link
-					href="https://github.com/facebookresearch/Kats?tab=readme-ov-file#forecasting"
-					target="_blank"
-				>
-					https://github.com/facebookresearch/Kats?tab=readme-ov-file#forecasting
-				</Link>
-				<br />
-				<br />
-				<Link
 					href="https://neptune.ai/blog/arima-vs-prophet-vs-lstm"
 					target="_blank"
 				>
@@ -198,14 +243,6 @@ export function References() {
 				<br />
 				<br />
 				<Link
-					href="https://otexts.com/fpp2/non-seasonal-arima.html#acf-and-pacf-plots"
-					target="_blank"
-				>
-					https://otexts.com/fpp2/non-seasonal-arima.html#acf-and-pacf-plots
-				</Link>
-				<br />
-				<br />
-				<Link
 					href="https://www.youtube.com/watch?v=hD13nv8SK6A"
 					target="_blank"
 				>
@@ -218,14 +255,39 @@ export function References() {
 					target="_blank"
 				>
 					https://people.duke.edu/~rnau/411arim.htm
+				</Link>{" "}
+				<br />
+				<br />
+				<Link
+					href="https://machinelearningmastery.com/autoregression-models-time-series-forecasting-python/"
+					target="_blank"
+				>
+					https://machinelearningmastery.com/autoregression-models-time-series-forecasting-python/
 				</Link>
 				<br />
 				<br />
 				<Link
-					href="https://ilyasbinsalih.medium.com/what-are-acf-and-pacf-plots-in-time-series-analysis-cb586b119c5d"
+					href="https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-modeling/"
 					target="_blank"
 				>
-					https://ilyasbinsalih.medium.com/what-are-acf-and-pacf-plots-in-time-series-analysis-cb586b119c5d
+					https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-modeling/
+				</Link>
+				<br />
+				<br />
+				<Link
+					href="https://www.youtube.com/watch?v=GE3JOFwTWVM"
+					target="_blank"
+				>
+					https://www.youtube.com/watch?v=GE3JOFwTWVM
+				</Link>
+			</div>
+
+			<div>
+				<Typography variant="body1">
+					<b>Resource for Folium</b>
+				</Typography>
+				<Link href="https://python-visualization.github.io/folium/latest/" target="_blank">
+				https://python-visualization.github.io/folium/latest/
 				</Link>
 			</div>
 			<div>
@@ -285,7 +347,9 @@ export function References() {
 					target="_blank"
 				>
 					https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification
-				</Link><br/><br/>
+				</Link>
+				<br />
+				<br />
 				<Link
 					href="https://worldpopulationreview.com/country-rankings/tropical-countries"
 					target="_blank"

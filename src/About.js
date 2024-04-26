@@ -6,9 +6,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import lea from "./images/lea.jpg";
-import dog from "./images/dog.png"
+import dog from "./images/dog.png";
 import Toolbar from "@mui/material/Toolbar";
-import "./About.css"
+import leven from "./images/leven.png";
+import "./About.css";
 
 export function About() {
 	return (
@@ -26,30 +27,53 @@ export function About() {
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="small" href="mailto:leaemerlyn@gmail.com">Email</Button>
-					<Button size="small" href="https://www.linkedin.com/in/lea-emerlyn-7b8170168/" target="_blank">LinkedIn</Button>
+					<Button size="small" href="mailto:leaemerlyn@gmail.com">
+						Email
+					</Button>
+					<Button
+						size="small"
+						href="https://www.linkedin.com/in/lea-emerlyn-7b8170168/"
+						target="_blank"
+					>
+						LinkedIn
+					</Button>
 				</CardActions>
 			</Card>
 
-            <Card className="card">
-				<CardMedia component="img" alt="dog" height="200" image={dog} />
+			<Card className="card">
+				<CardMedia
+					component="img"
+					alt="leven"
+					height="300"
+					image={leven}
+				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
-						Lizard
+						Leven Cai
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
-						Lizards are a widespread group of squamate reptiles,
-						with over 6,000 species, ranging across all continents
-						except Antarctica
+						I’m a former math and science teacher with an interest
+						in data analytics. I’m currently exploring career
+						trajectories in the data field. I hope you enjoy reading
+						through our analysis of local and global temperatures
+						from the past few hundred years.
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="small">Email</Button>
-					<Button size="small">LinkedIn</Button>
+					<Button size="small" href="mailto:levencai@seas.upenn.edu">
+						Email
+					</Button>
+					<Button
+						size="small"
+						href="https://www.linkedin.com/in/208cai5099/"
+						target="_blank"
+					>
+						LinkedIn
+					</Button>
 				</CardActions>
 			</Card>
 
-            <Card className="card">
+			<Card className="card">
 				<CardMedia component="img" alt="dog" height="200" image={dog} />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
@@ -68,4 +92,4 @@ export function About() {
 			</Card>
 		</div>
 	);
-};
+}
