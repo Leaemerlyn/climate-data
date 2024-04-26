@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/climate-data/static/css/main.9eac86ef.css",
-    "main.js": "/climate-data/static/js/main.c7e382d8.js",
+    "main.js": "/climate-data/static/js/main.954e95fe.js",
     "static/js/453.d01a633e.chunk.js": "/climate-data/static/js/453.d01a633e.chunk.js",
     "static/media/landingBackground.png": "/climate-data/static/media/landingBackground.dbb916850628bb3a2645.png",
     "static/media/cover.jpg": "/climate-data/static/media/cover.d2e811ead24aaf9ea756.jpg",
@@ -9,11 +9,16 @@
     "static/media/country_list_temp_change.png": "/climate-data/static/media/country_list_temp_change.f87ee7142b0314705957.png",
     "static/media/country_slope_intercept_1743.png": "/climate-data/static/media/country_slope_intercept_1743.0721f05156b863ac7ba4.png",
     "static/media/country_slope_intercept.png": "/climate-data/static/media/country_slope_intercept.f78a1af6876c7b875194.png",
+    "static/media/leven.png": "/climate-data/static/media/leven.e61d8f120e705b728cb4.png",
     "static/media/tax_rev_usd_bin.png": "/climate-data/static/media/tax_rev_usd_bin.0a412220810a704091f5.png",
     "static/media/tax_rev_gdp_list.png": "/climate-data/static/media/tax_rev_gdp_list.c7db82dc286fce612929.png",
     "static/media/highest_tax_rev_gdp.png": "/climate-data/static/media/highest_tax_rev_gdp.c15cbcf0ee762c825b5f.png",
+    "static/media/25_year_period_avg_cities_us.png": "/climate-data/static/media/25_year_period_avg_cities_us.94b497e8dab5e887900d.png",
     "static/media/tax_rev_usd_europe.png": "/climate-data/static/media/tax_rev_usd_europe.da4f26f0b15f466fb123.png",
     "static/media/countries.png": "/climate-data/static/media/countries.6de7eff02f07a0aa9d5d.png",
+    "static/media/global_average_temperature_over_time.png": "/climate-data/static/media/global_average_temperature_over_time.32b3b55a3d70fbd638b2.png",
+    "static/media/decadal_average_temp_countries_high_tax.png": "/climate-data/static/media/decadal_average_temp_countries_high_tax.13c652928784029ad168.png",
+    "static/media/decadal_average_temp_international_cities.png": "/climate-data/static/media/decadal_average_temp_international_cities.8f5cf02961c7369b386a.png",
     "static/media/Mt Tambora West Europe.png": "/climate-data/static/media/Mt Tambora West Europe.7081d2d154247e6b1150.png",
     "static/media/Mt Tambora NE US.png": "/climate-data/static/media/Mt Tambora NE US.703cf65ba98322a1d2ec.png",
     "static/media/Mt Pinatubo Temp Difference.png": "/climate-data/static/media/Mt Pinatubo Temp Difference.f91050b13a1f04162faa.png",
@@ -39,11 +44,11 @@
     "static/media/ARIMA RMSE.png": "/climate-data/static/media/ARIMA RMSE.e3416f2946698957e271.png",
     "index.html": "/climate-data/index.html",
     "main.9eac86ef.css.map": "/climate-data/static/css/main.9eac86ef.css.map",
-    "main.c7e382d8.js.map": "/climate-data/static/js/main.c7e382d8.js.map",
+    "main.954e95fe.js.map": "/climate-data/static/js/main.954e95fe.js.map",
     "453.d01a633e.chunk.js.map": "/climate-data/static/js/453.d01a633e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9eac86ef.css",
-    "static/js/main.c7e382d8.js"
+    "static/js/main.954e95fe.js"
   ]
 }
