@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/climate-data/static/css/main.9eac86ef.css",
-    "main.js": "/climate-data/static/js/main.65fdc7dc.js",
+    "main.js": "/climate-data/static/js/main.a93dc2b7.js",
     "static/js/453.d01a633e.chunk.js": "/climate-data/static/js/453.d01a633e.chunk.js",
     "static/media/landingBackground.png": "/climate-data/static/media/landingBackground.dbb916850628bb3a2645.png",
     "static/media/cover.jpg": "/climate-data/static/media/cover.d2e811ead24aaf9ea756.jpg",
@@ -9,7 +9,7 @@
     "static/media/country_list_temp_change.png": "/climate-data/static/media/country_list_temp_change.f87ee7142b0314705957.png",
     "static/media/country_slope_intercept_1743.png": "/climate-data/static/media/country_slope_intercept_1743.0721f05156b863ac7ba4.png",
     "static/media/country_slope_intercept.png": "/climate-data/static/media/country_slope_intercept.f78a1af6876c7b875194.png",
-    "static/media/leven.png": "/climate-data/static/media/leven.e61d8f120e705b728cb4.png",
+    "static/media/leven.png": "/climate-data/static/media/leven.b610e198e76201a11508.png",
     "static/media/tax_rev_usd_bin.png": "/climate-data/static/media/tax_rev_usd_bin.0a412220810a704091f5.png",
     "static/media/tax_rev_gdp_list.png": "/climate-data/static/media/tax_rev_gdp_list.c7db82dc286fce612929.png",
     "static/media/tsne_anno.png": "/climate-data/static/media/tsne_anno.9e5c8f6d157781dbc5a2.png",
@@ -58,11 +58,11 @@
     "static/media/ARIMA RMSE.png": "/climate-data/static/media/ARIMA RMSE.e3416f2946698957e271.png",
     "index.html": "/climate-data/index.html",
     "main.9eac86ef.css.map": "/climate-data/static/css/main.9eac86ef.css.map",
-    "main.65fdc7dc.js.map": "/climate-data/static/js/main.65fdc7dc.js.map",
+    "main.a93dc2b7.js.map": "/climate-data/static/js/main.a93dc2b7.js.map",
     "453.d01a633e.chunk.js.map": "/climate-data/static/js/453.d01a633e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9eac86ef.css",
-    "static/js/main.65fdc7dc.js"
+    "static/js/main.a93dc2b7.js"
   ]
 }
