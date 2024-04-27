@@ -38,8 +38,8 @@ export function Landing() {
 						revenue, tax revenue in relation to GDP, and country’s
 						capitalistic index correlates with their temperature,
 						and how historical natural phenomena such as volcanic
-						eruptions and climate weather patterns (ie. El Nino and
-						La Nina) changed the trajectory of a country’s climate.
+						eruptions and climate patterns (ie. El Nino and
+						La Nina) changed the trajectory of a country’s weather.
 						<br />
 						<br />
 						In our final analysis, we present a time-series analysis

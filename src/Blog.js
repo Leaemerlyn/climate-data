@@ -8,14 +8,14 @@ import mt_tambora_temp_diff from "./images/blogImages/Mt Tambora Temp Diff.png";
 import arima_rmse from "./images/blogImages/ARIMA RMSE.png";
 import coldest_city_temp_predictions from "./images/blogImages/Coldest City Temp Predictions.png";
 import coldest_country_temp_predictions from "./images/blogImages/Coldest Country Temp Predictions.png";
-import el_nino_northern_states from "./images/blogImages/El Nino Northern States.png";
-import el_nino_southern_states from "./images/blogImages/El Nino Southern States.png";
+import el_nino_northern_states from "./images/blogImages/el_nino_northern_states.png";
+import el_nino_southern_states from "./images/blogImages/el_nino_southern_states.png";
 import high_and_low_tax_country_predictions from "./images/blogImages/High and Low Tax Country Predictions.png";
 import high_temp_change_country_predictions from "./images/blogImages/High Temp Change Country Predictions.png";
 import hottest_city_temp_predictions from "./images/blogImages/Hottest City Temp Predictions.png";
 import hottest_country_temp_predictions from "./images/blogImages/Hottest Country Temp Predictions.png";
-import la_nina_northern_states from "./images/blogImages/La Nina Northern States.png";
-import la_nina_southern_states from "./images/blogImages/La Nina Southern States.png";
+import la_nina_northern_states from "./images/blogImages/la_nina_northern_states.png";
+import la_nina_southern_states from "./images/blogImages/la_nina_southern_states.png";
 import mt_pinatubo_global_temp from "./images/blogImages/Mt Pinatubo Global Temp.png";
 import mt_pinatubo_temp_difference from "./images/blogImages/Mt Pinatubo Temp Difference.png";
 import mt_tambora_ne_us from "./images/blogImages/Mt Tambora NE US.png";
@@ -50,6 +50,7 @@ import tsne_30_countries from "./images/blogImages/tsne_30_countries.png";
 import tsne_50_countries from "./images/blogImages/tsne_50_countries.png";
 import tsne_pre_anno_countries from "./images/blogImages/tsne_pre_anno_countries.png";
 import tsne_anno_countries from "./images/blogImages/tsne_anno_countries.png";
+import decadal_avg_capitalist from "./images/blogImages/decadal_avg_capitalist.png";
 
 export const Blog = () => {
 	return (
@@ -87,21 +88,30 @@ export const Blog = () => {
 				<Typography variant="h6">Where Our Data Comes From</Typography>
 				<Typography>
 					Our dataset collectively comes from several major sources:
-					The first one comes from Berkeley Earth on Kaggle, and this
-					contains information such as temperature data beginning from
-					the 1750s and ending in the 2010s. The Berkeley Earth
-					dataset contains five CSV files, which includes climate data
-					points observed in cities, countries, and states in the U.S.
-					The majority of our analysis will be anchored by the data
-					from Berkeley Earth.
+					The first one comes from{" "}
+					<a href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data">
+						Berkeley Earth
+					</a>{" "}
+					on Kaggle, and this contains information such as temperature
+					data beginning from the 1750s and ending in the 2010s. The
+					Berkeley Earth dataset contains five CSV files, which
+					includes climate data points observed in cities, countries,
+					and states in the U.S. The majority of our analysis will be
+					anchored by the data from Berkeley Earth.
 				</Typography>
 				<Typography>
-					The next source of our data comes from Data Pandas and the
-					Global Revenue Statistics Database, which contains
-					information on a country’s capitalistic index, tax revenue,
-					and GDP. This serves as the foundational dataset for our
-					analysis on understanding how human factors and
-					interventions correlate with a country’s climate.
+					The next source of our data comes from{" "}
+					<a href="https://www.datapandas.org/ranking/capitalist-countries#full-data">
+						Data Pandas
+					</a>{" "}
+					and the{" "}
+					<a href="https://www.compareyourcountry.org/tax-revenues-global">
+						Global Revenue Statistics Database
+					</a>
+					, which contains information on a country’s capitalistic
+					index, tax revenue, and GDP. This serves as the foundational
+					dataset for our analysis on understanding how human factors
+					and interventions correlate with a country’s climate.
 				</Typography>
 				<Typography>
 					For analyzing the effects non-human factors (ie. natural
@@ -483,18 +493,18 @@ export const Blog = () => {
 					the next section of our analysis. We’ll study how human
 					factors correlate to a country’s observed temperature. We’ll
 					also attempt to interrogate how strongly correlated human
-					factors are to a country’s observed temperature. x
+					factors are to a country’s observed temperature.
 				</Typography>
 
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h5">
-					<b>Human Actions</b>
+					<b>Human Factors</b>
 				</Typography>
 				<Typography>
 					Since climate change is a very important phenomenon, we were
 					interested in exploring what correlations might exist
 					between government activities and their countries’ surface
-					temperature deltas.Governments that have more funding might
+					temperature deltas. Governments that have more funding might
 					be able to fund environmental research and start programs
 					specifically targeting global warming. These governments
 					might also have more power to enforce laws to prohibit
@@ -530,7 +540,7 @@ export const Blog = () => {
 				<Typography>
 					All these countries also seem to have an upward trend in
 					temperature. Let's see if there is a correlation between tax
-					revenue and temperature change{" "}
+					revenue and temperature change.
 				</Typography>
 
 				<div
@@ -550,13 +560,11 @@ export const Blog = () => {
 						src={tax_rev_usd_europe}
 					></img>
 				</div>
-
-				<img src={country_temp_change}></img>
-
 				<Typography variant="caption">
-					Caption: tax trends seems to be going up generally. US
-					collects the most tax by far.
+					Tax trends seems to be going up generally. US collects the
+					most tax by far.
 				</Typography>
+
 				<Typography>
 					Tax revenues increased consistently over time across most
 					countries. However, since tax revenue is partly a function
@@ -594,7 +602,7 @@ export const Blog = () => {
 				<Divider sx={{ opacity: 0, padding: "12px" }} ç></Divider>
 
 				<Typography variant="h6">
-					Tax Revenue as percentage of GDP
+					Tax Revenue as Percentage of GDP
 				</Typography>
 
 				<Typography>
@@ -707,6 +715,19 @@ export const Blog = () => {
 					is, the less power the government has over domestic issues.
 					Therefore, the government will be less likely to push
 					environmental regulations.{" "}
+				</Typography>
+
+				<Typography>
+					To start, let’s plot out the decadal average temperatures
+					beginning in the 20th century for the most capitalist
+					countries, so we can understand the general ordering on how
+					warm or cold each country is, in relation to one another.
+				</Typography>
+				<img src={decadal_avg_capitalist}></img>
+
+				<Typography>
+					The most capitalistic countries also seem to have a slight
+					increase in temperature.
 				</Typography>
 				<img src={temp_delta_capitalist}></img>
 				<Typography variant="caption">
@@ -840,8 +861,8 @@ export const Blog = () => {
 					weather and the resulting loss of human life during that
 					time period was not solely caused by the volcanic eruption.
 					The European countries were already experiencing a
-					temperature decrease before the eruption &mdash; a reminder that
-					temperature is influenced by multiple factors.
+					temperature decrease before the eruption &mdash; a reminder
+					that temperature is influenced by multiple factors.
 				</Typography>
 				<Typography>
 					In 1991, another major, albeit smaller volcanic eruption
@@ -865,8 +886,8 @@ export const Blog = () => {
 					difference in the average temperatures of southeastern
 					countries near the Philippines. It appears that Thailand,
 					Vietnam, Laos, and Australia saw the largest drops in
-					temperature from 1991 to 1992 &mdash; a trend that was likely to
-					be partially caused by the volcanic eruption.
+					temperature from 1991 to 1992 &mdash; a trend that was
+					likely to be partially caused by the volcanic eruption.
 				</Typography>
 
 				<img src={mt_pinatubo_temp_difference}></img>
@@ -911,9 +932,14 @@ export const Blog = () => {
 					Nino episode occurred from September 1982 to March 1983 and
 					a strong La Nina episode occurred from November 1973 to
 					January 1974. We calculated the 30-year average temperatures
-					of select US states and noted the differences between the
-					states’ averages and their temperatures during the El Nino
-					and La Nina incidents. For more details, click{" "}
+					during the months of the El Nino and La Nina episodes. We
+					then plotted the differences between the states’ average
+					temperatures and their actual temperatures during the El
+					Nino and La Nina incidents. For example, an El Nino episode
+					affected the temperature of Montana in Jan 1983. We
+					calculated the average January temperature across 30 years
+					in Montana and found the difference from the Jan 1983
+					temperature. For more details, click{" "}
 					<a href="https://colab.research.google.com/drive/1GFrKDCUyf-Mw6vUDgcCVC4CmQ16V7tVB#scrollTo=1DoHqidZ7hfg">
 						here
 					</a>
