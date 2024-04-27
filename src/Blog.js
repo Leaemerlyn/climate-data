@@ -42,13 +42,11 @@ import tsne_5 from "./images/blogImages/tsne_5.png";
 import tsne_30 from "./images/blogImages/tsne30.png";
 import cities_elbow_method from "./images/blogImages/cities_elbow_method.png";
 import tsne_50 from "./images/blogImages/tsne50.png";
-import tsne_pre_anno from "./images/blogImages/tsne_pre_anno.png";
 import tsne_anno from "./images/blogImages/tsne_anno.png";
 import countries_elbow from "./images/blogImages/countries_elbow.png";
 import tsne_5_countries from "./images/blogImages/tsne_5_countries.png";
 import tsne_30_countries from "./images/blogImages/tsne_30_countries.png";
 import tsne_50_countries from "./images/blogImages/tsne_50_countries.png";
-import tsne_pre_anno_countries from "./images/blogImages/tsne_pre_anno_countries.png";
 import tsne_anno_countries from "./images/blogImages/tsne_anno_countries.png";
 import decadal_avg_capitalist from "./images/blogImages/decadal_avg_capitalist.png";
 
@@ -88,19 +86,19 @@ export const Blog = () => {
 				<Typography variant="h6">Where Our Data Comes From</Typography>
 				<Typography>
 					Our dataset collectively comes from several major sources:
-					The first one comes from{" "}
+					Our first source of data is{" "}
 					<a href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data">
 						Berkeley Earth
 					</a>{" "}
 					on Kaggle, and this contains information such as temperature
 					data beginning from the 1750s and ending in the 2010s. The
 					Berkeley Earth dataset contains five CSV files, which
-					includes climate data points observed in cities, countries,
+					include climate data points observed in cities, countries,
 					and states in the U.S. The majority of our analysis will be
 					anchored by the data from Berkeley Earth.
 				</Typography>
 				<Typography>
-					The next source of our data comes from{" "}
+					The next source of our data is{" "}
 					<a href="https://www.datapandas.org/ranking/capitalist-countries#full-data">
 						Data Pandas
 					</a>{" "}
@@ -201,7 +199,7 @@ export const Blog = () => {
 					increasing over the past two centuries.
 				</Typography>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
-				<Typography variant="h6">Cities </Typography>
+				<Typography variant="h6">Cities Dataset EDA </Typography>
 				<img src={decadal_average_temp_international_cities}></img>
 				<Typography variant="caption">
 					Plotting selected international cities shows the diverse
@@ -236,7 +234,7 @@ export const Blog = () => {
 					and the subsequent 25-year period. We observe that cities
 					like Orlando, Florida remain consistently at roughly 22
 					degree Celsius, whereas cities like Cambridge, Massachusetts
-					remain consistently at roughly 7 degree Celsius
+					remain consistently at roughly 7 degree Celsius.
 				</Typography>
 
 				<Typography>
@@ -404,16 +402,9 @@ export const Blog = () => {
 						justifyContent: "center",
 						flexWrap: "wrap",
 					}}
-				>
-					<img
-						style={{ maxWidth: "calc(min(100%,400px))" }}
-						src={tsne_pre_anno}
-					></img>
-					<img
-						style={{ maxWidth: "calc(min(100%,400px))" }}
-						src={tsne_anno}
-					></img>
-				</div>
+				></div>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+
 				<Typography>
 					Our t-SNE visualization with city annotations illustrates
 					the three distinct clusters: cold, moderate, and hot
@@ -423,9 +414,12 @@ export const Blog = () => {
 					and Warsaw cluster together, whereas cities with hotter
 					climates like Cairo and Dubai cluster together.
 				</Typography>
+				<img src={tsne_anno}></img>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 
-				<Typography variant="h6">Clustering on Countries</Typography>
+				<Typography variant="h6">
+					k-Means Clustering on Countries
+				</Typography>
 				<Typography>
 					Below, we show that the optimal number of clusters is 3, and
 					the perplexity hyperparameter is ideally set to 35 when we
@@ -467,16 +461,7 @@ export const Blog = () => {
 						justifyContent: "center",
 						flexWrap: "wrap",
 					}}
-				>
-					<img
-						style={{ maxWidth: "calc(min(100%,400px))" }}
-						src={tsne_pre_anno_countries}
-					></img>
-					<img
-						style={{ maxWidth: "calc(min(100%,400px))" }}
-						src={tsne_anno_countries}
-					></img>
-				</div>
+				></div>
 				<Typography>
 					Our t-SNE visualization with country annotations illustrates
 					the three distinct clusters: polar, temperate, and tropical
@@ -488,6 +473,9 @@ export const Blog = () => {
 					cluster together.
 				</Typography>
 
+				<img src={tsne_anno_countries}></img>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+
 				<Typography>
 					Now that we’ve explored our climate data, let’s move into
 					the next section of our analysis. We’ll study how human
@@ -496,7 +484,7 @@ export const Blog = () => {
 					factors are to a country’s observed temperature.
 				</Typography>
 
-				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+				<Divider sx={{ opacity: 0, padding: "24px" }}></Divider>
 				<Typography variant="h5">
 					<b>Human Factors</b>
 				</Typography>
@@ -534,7 +522,8 @@ export const Blog = () => {
 					To start, let’s plot out the decadal average temperatures
 					beginning in the 20th century for countries with the highest
 					tax revenue, so we can understand the general ordering on
-					how warm or cold each country is, in relation to one another
+					how warm or cold each country is, in relation to one
+					another.
 				</Typography>
 				<img src={decadal_average_temp_countries_high_tax}></img>
 				<Typography>
@@ -597,7 +586,8 @@ export const Blog = () => {
 					There is also a vertical cluster that can be seen on the
 					left of the graph, containing some high-tax revenue (Likely
 					rich) countries which all have a similarly low temperature
-					delta. These are all European countries as seen above.
+					delta. As seen above, these are a set of European countries,
+					plus Japan and China.
 				</Typography>
 				<Divider sx={{ opacity: 0, padding: "12px" }} ç></Divider>
 
@@ -616,8 +606,8 @@ export const Blog = () => {
 					baseline influence of each country’s GDP. We decided to look
 					at tax revenue as a percentage of GDP, to better measure how
 					aggressively governments tax the economic resources that are
-					present in each country. It also controls the level of
-					inflation in each country.
+					present in each country. This approach also controls for the
+					level of inflation in each country.
 				</Typography>
 
 				<img src={tax_rev_gdp_list}></img>
@@ -655,7 +645,7 @@ export const Blog = () => {
 					bottom right) are still somewhat visible, but there is now a
 					clearer trend indicating that countries with a high tax
 					revenue per GDP experienced a lower temperature change
-					between the 1700s and now.
+					between the 1700s and present day.
 				</Typography>
 
 				<Typography>
@@ -668,10 +658,10 @@ export const Blog = () => {
 					warming as a result of increased greenhouse gases in the
 					atmosphere. Polluting countries don’t just cause warming
 					locally, but instead warm the planet as a whole. This has
-					been the subject of tough discussions at climate summits and
-					the like. Therefore, it is unlikely that governments raising
-					more tax revenue and using it for aggressive climate
-					policies would be able to achieve local cooling effects.
+					been the subject of tough discussions at climate summits.
+					Therefore, it is unlikely that governments raising more tax
+					revenue and using it for aggressive climate policies would
+					be able to achieve local cooling effects.
 				</Typography>
 
 				<Typography>
@@ -691,15 +681,16 @@ export const Blog = () => {
 					It is more likely that the data is negatively correlated for
 					other reasons. For example, these factors could be
 					correlated as a result of historical circumstances. Many
-					rich and stable countries able to tax and spend more, such
-					as European countries, are located in temperate areas of the
-					world which may be experiencing less heating due to climate
-					change. At the same time, they are rich and stable because
-					of historical circumstances such as colonialism. There is
-					not necessarily any causal relationship between the tax
-					revenue per GDP and the countries’ temperature deltas, but
-					instead they could be two outcomes of the countries’
-					geographical locations, related by historical circumstances.
+					rich and stable countries that are able to tax and spend
+					more, such as European countries, are located in temperate
+					areas of the world which may be experiencing less heating
+					due to climate change. At the same time, they are rich and
+					stable because of historical circumstances such as
+					colonialism. There is not necessarily any causal
+					relationship between the tax revenue per GDP and the
+					countries’ temperature deltas, but instead they could be two
+					outcomes of the countries’ geographical locations, related
+					by historical circumstances.
 				</Typography>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h6">Capitalistic Index</Typography>
@@ -735,14 +726,17 @@ export const Blog = () => {
 				</Typography>
 
 				<Typography>
-					The correlation between capitalism and surface temperature
-					of that area is weakly correlated. A good quantity of the
-					countries which scored high on the capitalism index are
-					countries with a relatively low baseline temperature. There
-					are some exceptions though, such as Singapore. Cool
-					countries experienced less heating from climate change, so
-					this may explain the weak negative correlation between
-					capitalistic index and temperature delta.
+					The capitalism index and surface temperature datapoints have
+					a weak negative correlation. This suggests the opposite of
+					our original hypothesis. Countries with a higher capitalism
+					index have a moderate likelihood of experiencing less
+					cooling from climate change. This could be due to a number
+					of factors. The weak correlation could simply be a
+					coincidence. There could also be a reverse causation where
+					less heating (or an upstream cause of it, such as temperate
+					or stable baseline climate) allow countries to become richer
+					and align with capitalistic ideologies due to historical
+					circumstances.
 				</Typography>
 
 				<Divider sx={{ opacity: 0, padding: "24px" }}></Divider>
@@ -775,9 +769,9 @@ export const Blog = () => {
 				<Typography>
 					In 1815, Mount Tambora erupted in Indonesia. The eruption
 					released air particles that traveled across the world,
-					leading to a global drop in temperature. According to The{" "}
+					leading to a global drop in temperature. According to{" "}
 					<a href="https://www.irishtimes.com/opinion/a-volcanic-eruption-with-global-repercussions-an-irishman-s-diary-on-1816-the-year-without-a-summer-1.2760797">
-						Irish Times
+						The Irish Times
 					</a>
 					, the world was already experiencing a cold episode that was
 					worsened by the volcanic eruption.{" "}
@@ -790,20 +784,19 @@ export const Blog = () => {
 					temperature from 1813 to 1816.
 				</Typography>
 				<Typography>
-					The{" "}
 					<a href="https://www.irishtimes.com/opinion/a-volcanic-eruption-with-global-repercussions-an-irishman-s-diary-on-1816-the-year-without-a-summer-1.2760797">
-						Irish Times
+						The Irish Times
 					</a>{" "}
 					and{" "}
 					<a href="https://www.smithsonianmag.com/history/blast-from-the-past-65102374/">
 						Smithsonian Magazine
 					</a>{" "}
 					reported that the Northern Hemisphere experienced a
-					noticeable drop in temperature after the eruption in 1816 -
-					a period called “the year without a summer”. It is predicted
-					that the eruption contributed to the temperature drop.
-					Interestingly, our dataset didn’t show a drastic drop in
-					temperature in northern countries. Our analysis shows an
+					noticeable drop in temperature after the eruption in 1816
+					&mdash; a period called “the year without a summer”. It is
+					predicted that the eruption contributed to the temperature
+					drop. Interestingly, our dataset didn’t show a drastic drop
+					in temperature in northern countries. Our analysis shows an
 					approximate 0.3°C drop from 1815 to 1816.
 				</Typography>
 				<img
@@ -853,16 +846,23 @@ export const Blog = () => {
 					over half a degree from 1814 to 1816. The European countries
 					experienced an approximate 0.8 degree drop in a one-year
 					span from 1815 to 1816. Numerically, the temperature
-					decreases were not significant. Yet, The Irish Times and
-					Smithsonian Magazine mentioned that the temperature was so
-					frigid that crop yield was heavily reduced. The low yield
-					led to famine across northeastern US and western European
-					countries. As noted by Smithsonian Magazine, the cold
-					weather and the resulting loss of human life during that
-					time period was not solely caused by the volcanic eruption.
-					The European countries were already experiencing a
-					temperature decrease before the eruption &mdash; a reminder
-					that temperature is influenced by multiple factors.
+					decreases were not significant. Yet,{" "}
+					<a href="https://www.irishtimes.com/opinion/a-volcanic-eruption-with-global-repercussions-an-irishman-s-diary-on-1816-the-year-without-a-summer-1.2760797">
+						The Irish Times
+					</a>{" "}
+					and{" "}
+					<a href="https://www.smithsonianmag.com/history/blast-from-the-past-65102374/">
+						Smithsonian Magazine
+					</a>{" "}
+					mentioned that the temperature was so frigid that crop yield
+					was heavily reduced. The low yield led to famine across
+					northeastern US and western European countries. As noted by
+					Smithsonian Magazine, the cold weather and the resulting
+					loss of human life during that time period was not solely
+					caused by the volcanic eruption. The European countries were
+					already experiencing a temperature decrease before the
+					eruption &mdash; a reminder that temperature is influenced
+					by multiple factors.
 				</Typography>
 				<Typography>
 					In 1991, another major, albeit smaller volcanic eruption
@@ -948,7 +948,7 @@ export const Blog = () => {
 
 				<Typography>
 					As shown below, we can see that the strong 1982-1983 El Nino
-					led to higher than average temperatures across select
+					led to higher than average temperatures across our selected
 					northwestern states.
 				</Typography>
 
@@ -997,15 +997,15 @@ export const Blog = () => {
 				</Typography>
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h6">
-					Comparing ARIMA and Prophet
+					Comparing Seasonal ARIMA and Prophet
 				</Typography>
 				<Typography>
-					We considered two time-series models, ARIMA and{" "}
+					We considered two time-series models, Seasonal ARIMA and{" "}
 					<a href="https://facebook.github.io/prophet/">Prophet</a>,
 					and compared their effectiveness on sample data.
 				</Typography>
 				<Typography>
-					The ARIMA model was difficult to train due to its
+					The Seasonal ARIMA model was difficult to train due to its
 					hyperparameters. ARIMA is based on three components:
 					autoregression, differencing, and moving average. As we
 					adjust these hyperparameters, the model can take longer to
@@ -1049,7 +1049,7 @@ export const Blog = () => {
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 
 				<Typography variant="h6">
-					Predicting City and Countries Temperatures
+					Predicting the Temperatures of Cities and Countries
 				</Typography>
 				<Typography>
 					We used Prophet to predict the temperatures of some of the
@@ -1151,7 +1151,7 @@ export const Blog = () => {
 					In our EDA, we also noted that a country’s tax revenue per
 					GDP is correlated with its temperature change. It would be
 					interesting to use Prophet to predict the future
-					temperatures at countries with low and high tax revenue.
+					temperatures for countries with low and high tax revenue.
 				</Typography>
 				<img
 					style={{
