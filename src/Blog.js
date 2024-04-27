@@ -37,7 +37,19 @@ import global_average_temperature_over_time from "./images/blogImages/global_ave
 import decadal_average_temp_international_cities from "./images/blogImages/decadal_average_temp_international_cities.png";
 import year_period_avg_cities_us from "./images/blogImages/25_year_period_avg_cities_us.png";
 import decadal_average_temp_countries_high_tax from "./images/blogImages/decadal_average_temp_countries_high_tax.png";
-import state_avg_temp_trend from "./images/blogImages/state_avg_temp_trend.png"
+import state_avg_temp_trend from "./images/blogImages/state_avg_temp_trend.png";
+import tsne_5 from "./images/blogImages/tsne_5.png";
+import tsne_30 from "./images/blogImages/tsne30.png";
+import cities_elbow_method from "./images/blogImages/cities_elbow_method.png";
+import tsne_50 from "./images/blogImages/tsne50.png";
+import tsne_pre_anno from "./images/blogImages/tsne_pre_anno.png";
+import tsne_anno from "./images/blogImages/tsne_anno.png";
+import countries_elbow from "./images/blogImages/countries_elbow.png";
+import tsne_5_countries from "./images/blogImages/tsne_5_countries.png";
+import tsne_30_countries from "./images/blogImages/tsne_30_countries.png";
+import tsne_50_countries from "./images/blogImages/tsne_50_countries.png";
+import tsne_pre_anno_countries from "./images/blogImages/tsne_pre_anno_countries.png";
+import tsne_anno_countries from "./images/blogImages/tsne_anno_countries.png";
 
 export const Blog = () => {
 	return (
@@ -293,7 +305,186 @@ export const Blog = () => {
 				<Typography variant="h5">
 					<b>EDA: k-Means Clustering & t-SNE Visualizations</b>
 				</Typography>
-				<Typography>TO BE DONE </Typography>
+				<Typography>
+					To conclude our exploratory data analysis, let’s dive into
+					the application of t-SNE visualizations. Before we generate
+					the visualizations, we first need to use different methods
+					to ascertain the optimal number of clusters as well as the
+					perplexity hyperparameter for our t-SNE.{" "}
+				</Typography>
+				<Typography>
+					We can use the elbow method to determine the most suitable
+					number of clusters. By analyzing k-means clustering applied
+					separately to both cities and countries, we observe the
+					elbow point. When we plot the within-cluster sum of squares
+					(WCSS) against the number of potential clusters, we find
+					that the elbow point for both datasets (ie. cities &
+					countries) are both 3. We will set the optimal number of
+					clusters to 3, and using our domain knowledge of climate
+					data, this effectively categorizes regions into tropical
+					(hot), polar (cold), and temperate (moderate) conditions.
+				</Typography>
+				<Typography>
+					With the number of clusters finalized, we can move onto the
+					t-SNE technique for refining our clustering approach by
+					optimizing the visualization of groups based on temperature
+					attributes. The t-SNE is best used for projecting
+					high-dimensional data into a low-dimensional space for
+					visualization.{" "}
+				</Typography>
+				<Typography>
+					In the t-SNE, we’re interested in adjusting the
+					hyperparameter known as perplexity because we want to strike
+					a balance between capturing local and global data
+					characteristics. In the next plots, we experiment and
+					demonstrate how the visualization differs when setting the
+					perplexity setting to three values: 5, 30, and 50. For
+					visualizing both city and country clusters, we chose to set
+					the perplexity hyperparameter to 35.
+				</Typography>
+				<Typography>
+					Since we used k-means to separately categorize cities and
+					countries into clusters based on temperature, when we apply
+					t-SNE, we reveal interesting relationships between different
+					clusters. The visualization enhances our ability to
+					interpret climatic variations across different locations.
+				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+				<Typography variant="h6">
+					k-Means Clustering on Cities
+				</Typography>
+				<Typography>
+					Below, we show that the optimal number of clusters is 3, and
+					the perplexity hyperparameter is ideally set to 35 when we
+					apply k-means clustering on cities.
+				</Typography>
+
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
+				>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={cities_elbow_method}
+					></img>
+
+					<img
+						style={{
+							maxWidth: "calc(min(100%,400px))",
+							objectFit: "contain",
+						}}
+						src={tsne_5}
+					></img>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_30}
+					></img>
+
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_50}
+					></img>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
+				>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_pre_anno}
+					></img>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_anno}
+					></img>
+				</div>
+				<Typography>
+					Our t-SNE visualization with city annotations illustrates
+					the three distinct clusters: cold, moderate, and hot
+					temperature clusters. With a subset of cities labeled, we
+					can see that cities with similar temperatures are clustered
+					together. For example, cities with colder climates like Oslo
+					and Warsaw cluster together, whereas cities with hotter
+					climates like Cairo and Dubai cluster together.
+				</Typography>
+				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
+
+				<Typography variant="h6">Clustering on Countries</Typography>
+				<Typography>
+					Below, we show that the optimal number of clusters is 3, and
+					the perplexity hyperparameter is ideally set to 35 when we
+					apply k-means clustering on countries.
+				</Typography>
+
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
+				>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={countries_elbow}
+					></img>
+
+					<img
+						style={{
+							maxWidth: "calc(min(100%,400px))",
+							objectFit: "contain",
+						}}
+						src={tsne_5_countries}
+					></img>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_30_countries}
+					></img>
+
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_50_countries}
+					></img>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						flexWrap: "wrap",
+					}}
+				>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_pre_anno_countries}
+					></img>
+					<img
+						style={{ maxWidth: "calc(min(100%,400px))" }}
+						src={tsne_anno_countries}
+					></img>
+				</div>
+				<Typography>
+					Our t-SNE visualization with country annotations illustrates
+					the three distinct clusters: polar, temperate, and tropical
+					temperature clusters. With a subset of countries labeled, we
+					can see that countries with similar temperatures are
+					clustered together. For example, countries with colder
+					climates like Iceland and Poland cluster together, whereas
+					countries with hotter climates like Chad and Thailand
+					cluster together.
+				</Typography>
+
+				<Typography>
+					Now that we’ve explored our climate data, let’s move into
+					the next section of our analysis. We’ll study how human
+					factors correlate to a country’s observed temperature. We’ll
+					also attempt to interrogate how strongly correlated human
+					factors are to a country’s observed temperature. x
+				</Typography>
 
 				<Divider sx={{ opacity: 0, padding: "12px" }}></Divider>
 				<Typography variant="h5">
@@ -337,7 +528,9 @@ export const Blog = () => {
 				</Typography>
 				<img src={decadal_average_temp_countries_high_tax}></img>
 				<Typography>
-					should add some words here explaining the chart{" "}
+					All these countries also seem to have an upward trend in
+					temperature. Let's see if there is a correlation between tax
+					revenue and temperature change{" "}
 				</Typography>
 
 				<div
@@ -357,6 +550,8 @@ export const Blog = () => {
 						src={tax_rev_usd_europe}
 					></img>
 				</div>
+
+				<img src={country_temp_change}></img>
 
 				<Typography variant="caption">
 					Caption: tax trends seems to be going up generally. US
@@ -645,7 +840,7 @@ export const Blog = () => {
 					weather and the resulting loss of human life during that
 					time period was not solely caused by the volcanic eruption.
 					The European countries were already experiencing a
-					temperature decrease before the eruption - a reminder that
+					temperature decrease before the eruption &mdash; a reminder that
 					temperature is influenced by multiple factors.
 				</Typography>
 				<Typography>
@@ -670,7 +865,7 @@ export const Blog = () => {
 					difference in the average temperatures of southeastern
 					countries near the Philippines. It appears that Thailand,
 					Vietnam, Laos, and Australia saw the largest drops in
-					temperature from 1991 to 1992 - a trend that was likely to
+					temperature from 1991 to 1992 &mdash; a trend that was likely to
 					be partially caused by the volcanic eruption.
 				</Typography>
 
@@ -951,7 +1146,83 @@ export const Blog = () => {
 				<Typography variant="h5">
 					Conclusion and Further Research
 				</Typography>
-				<Typography>TBD</Typography>
+				<Typography>
+					Overall, our analysis demonstrates a deep appreciation of
+					climate and we share below the summarized insights we
+					derived from the dataset. We utilized many different
+					analysis tools to interrogate our data, and studied human
+					factors and non-human factors. We hope our findings serve as
+					a starting point for further research, where future climate
+					enthusiasts can continue making more informed observations
+					and conclude insights.
+				</Typography>
+				<Typography>
+					In our analysis of the climate dataset, we discovered
+					several interesting findings:
+					<ol>
+						<li>
+							Although we hypothesized that there might exist a
+							correlation between either absolute tax revenue in
+							US dollars, tax revenue as a percentage of GDP, or
+							capitalistic index with a country’s observed
+							temperature, it turns out that none of these three
+							human factors correlated significantly with
+							temperature. There potentially might be confounding
+							variables that impact our analysis, therefore, we
+							conclude that further research must be performed to
+							determine the exact correlations between human
+							factors and a country’s temperature. Future research
+							may involve looking at a country’s allocated budget
+							towards national environmental agencies or looking
+							at globally agreed upon treaties such as the Paris
+							Agreement (2015) or Kyoto Protocol (1997), and
+							understanding how these treaties correlate with
+							climate.
+						</li>
+						<li>
+							Naturally occurring phenomena will have unexpected
+							effects on the country’s temperature. For example,
+							volcanic eruptions in theory should decrease a
+							country’s temperature due to the incredibly large
+							amount of ash released into the atmosphere. The ash,
+							in turn, blocks out sunlight, leading to decreasing
+							temperatures. However, the Mount Tambora eruption in
+							Indonesia did not significantly contribute to the
+							decrease in temperature observed for certain
+							countries. Interestingly, the Mount Pinatubo
+							eruption in the Philippines indeed contributed to
+							decreasing temperatures for nearby countries in the
+							surrounding region.
+						</li>
+						<li>
+							When we studied the effects of El Nino and La Nina
+							on temperatures in the United States, we discovered
+							that states were experiencing the expected effects
+							of El Nino and La Nina. Namely, during periods of El
+							Nino, the Northwestern states observed warmer
+							conditions while the Southern states observed cooler
+							conditions. Indeed, the opposite effects were
+							observed during the periods of La Nina. This was
+							validating for our group, because it demonstrated we
+							could discern different climate patterns in our
+							Kaggle dataset.
+						</li>
+						<li>
+							Between the two approaches we used to create our
+							forecasting model, the Seasonal ARIMA model was more
+							challenging to train, when compared to Meta
+							Research’s Prophet model. We also found that the
+							Prophet model was more accurate than the Seasonal
+							ARIMA model as the root-mean-squared-error was
+							smaller in the Prophet model than the Seasonal ARIMA
+							model.
+						</li>
+					</ol>
+				</Typography>
+				<Typography>
+					Thank you for reading our analysis, and we hope you learned
+					something novel about climate data!
+				</Typography>
 			</Box>
 		</div>
 	);

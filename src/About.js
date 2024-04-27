@@ -9,6 +9,7 @@ import lea from "./images/lea.jpg";
 import dog from "./images/dog.png";
 import Toolbar from "@mui/material/Toolbar";
 import leven from "./images/leven.png";
+import derek from "./images/derek.JPG";
 import "./About.css";
 
 export function About() {
@@ -21,9 +22,9 @@ export function About() {
 						Lea Emerlyn
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
-						Lizards are a widespread group of squamate reptiles,
-						with over 6,000 species, ranging across all continents
-						except Antarctica
+						I'm a creative tech engineer with background in computer
+						science and Human-Computer Interaction. Thanks for
+						visting our blog!
 					</Typography>
 				</CardContent>
 				<CardActions>
@@ -74,20 +75,31 @@ export function About() {
 			</Card>
 
 			<Card className="card">
-				<CardMedia component="img" alt="dog" height="200" image={dog} />
+				<CardMedia
+					component="img"
+					alt="dog"
+					height="300"
+					image={derek}
+				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
-						Lizard
+						Derek Chen
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
-						Lizards are a widespread group of squamate reptiles,
-						with over 6,000 species, ranging across all continents
-						except Antarctica
+						Climate enthusiast with an eye to all things big data!
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="small">Email</Button>
-					<Button size="small">LinkedIn</Button>
+					<Button size="small" href="mailto:derche@seas.upenn.edu">
+						Email
+					</Button>
+					<Button
+						size="small"
+						href="https://www.linkedin.com/in/dkcn/"
+						target="_blank"
+					>
+						LinkedIn
+					</Button>
 				</CardActions>
 			</Card>
 		</div>
